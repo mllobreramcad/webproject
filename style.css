@@ -40,15 +40,45 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
+* {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko*/
+    box-sizing: border-box;
+}
+
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
+
 body {
-	background: #fff;
+	width: 960px;
+	margin: auto;
 }
+
+.home {
+	background: url(images/tattoos_olympia.jpg) repeat top center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+
+
+/******   fullscreen background test  ******/
+#page {
+
+}
+
+
+
+
 article,
 aside,
 details,
@@ -99,22 +129,37 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
-	line-height: 1.5;
+	color: #333;
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.2;
 }
 
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 }
+
+h1 {
+   	font-size: 36px;
+}
+
+h2 {
+   	font-size: 18px;
+}
+
+h3 {
+   	font-size: 15px;
+}
+
+
 hr {
-	background-color: #ccc;
+	background-color: #333;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.2em;
+	margin-top: .2em;
 }
 
 /* Text elements */
@@ -305,17 +350,44 @@ textarea {
 	width: 98%;
 }
 
+
+	
+/* =Structure
+----------------------------------------------- */
+#primary {
+float: left;
+margin: 0 -25% 0 0;
+width: 100%;
+}
+#content {
+margin: 0 25% 0 0;
+}
+#secondary { /* Sidebar 1 */
+float: right;
+overflow: hidden;
+width: 25%;
+}
+#tertiary { /* Sidebar 2 */
+clear: right;
+}
+.site-footer {
+clear: both;
+width: 100%;
+}
+
+
+
 /* Links */
 a {
-	color: royalblue;
+	color: #333;
 }
 a:visited {
-	color: purple;
+	color: #333;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #777;
 }
 
 /* Alignment */
@@ -342,24 +414,59 @@ a:active {
 	position: absolute !important;
 }
 
+/* =Header
+----------------------------------------------- */
+#masthead {
+   background-color: #fff;
+   height: 80px;
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+	width: 100%;
+    overflow: hidden;
+}
+
+hgroup {
+   width: 22%;
+   float: left;
+   height: 80px;
+}
+
+#logo img {
+   max-width: 93%;
+   padding: 7% 0% 0% 14%;
+}
+
+
 
 /* =Menu
 ----------------------------------------------- */
+.site-navigation {
+   width: 78%;
+   float: left;
+   overflow: hidden;
+   margin-left: 0%;
+}
+
 
 .main-navigation {
-	clear: both;
 	display: block;
+	text-transform: uppercase;
+	/*clear: both;
 	float: left;
-	width: 100%;
+	width: 100%;*/
+	
 }
 .main-navigation ul {
 	list-style: none;
-	margin: 0;
+	margin-top: 30px;
 	padding-left: 0;
 }
 .main-navigation li {
 	float: left;
 	position: relative;
+	padding: 0px 2%;
+	font-size: 18px;
 }
 .main-navigation a {
 	display: block;
@@ -405,6 +512,7 @@ a:active {
 .main-small-navigation .menu {
 	display: none;
 }
+
 
 
 /* =Content
@@ -572,3 +680,90 @@ object {
 .infinity-end.neverending #colophon {
 	display: block;
 }
+
+
+/* =Main
+----------------------------------------------- */
+#main {
+   clear: both;
+   background-color: #fff;
+   	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+	margin-top: 350px;
+	padding: 2%;
+	overflow: hidden;
+	width: 100%;
+}
+
+
+
+/* = Template-Home Styles
+----------------------------------------------- */
+.home_heading {
+   width: 22%;
+   float: left;
+}
+
+.home_heading img {
+   width: 100%;
+}
+
+.home_heading p {
+   font-weight: 600;
+}
+
+.home_heading_main {
+   width: 52%;
+   float: left;
+   margin: 0 2%;
+}
+
+.home_heading h2, .home_heading_main h2, .home_heading_aside h2 {
+   margin-bottom: 15px;
+   font-weight: 400;
+}
+  
+  
+.home_heading_aside {
+   width: 22%;   
+   float: left;
+}
+
+.home_heading_aside h3 {
+   font-weight: 400;
+}
+
+.home_heading_aside p {
+   margin-bottom: 5px;
+}
+
+.contact {
+  margin-top: 40px;
+}
+
+.contact p {
+  margin-bottom: 25px;
+}
+
+.contact img {
+   width: 13%;
+   float: left;
+   margin-right: 10px;
+}
+
+/* = Footer
+----------------------------------------------- */
+
+.site-footer {
+   height: 150px;
+   width: 100%;
+}
+
+.site-info {
+   text-align: right;
+   color: #fff;
+   font-size: 10px;
+   margin: 10px 7% 0 0;
+}
+

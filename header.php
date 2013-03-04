@@ -27,8 +27,11 @@
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+        <div id="logo">
+		<a href="http://webproject.jeremybasham.com"><img src="<?php bloginfo('template_url'); ?>/images/mtm-logo.png" alt=""/></a>
+        </div>
+		<!--/<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>-->
 		</hgroup>
 
 		<nav role="navigation" class="site-navigation main-navigation">

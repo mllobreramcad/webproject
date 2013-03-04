@@ -12,7 +12,7 @@
  * @since Webproject 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 654; /* pixels */
 
 /*
  * Load Jetpack compatibility file.
@@ -117,13 +117,23 @@ add_action( 'after_setup_theme', 'webproject_register_custom_background' );
  */
 function webproject_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'webproject' ),
+		'name' => __( 'Primary Widget Area', 'webproject' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
+	
+	    register_sidebar( array(
+        'name' => __( 'Secondary Widget Area', 'webproject' ),
+        'id' => 'sidebar-2',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h1 class="widget-title">',
+        'after_title' => '</h1>',
+    ) );
+	
 }
 add_action( 'widgets_init', 'webproject_widgets_init' );
 
@@ -144,6 +154,18 @@ function webproject_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'webproject_scripts' );
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Implement the Custom Header feature
