@@ -137,6 +137,54 @@ function webproject_widgets_init() {
 }
 add_action( 'widgets_init', 'webproject_widgets_init' );
 
+
+/**
+ * Add Custom Post type for Team Members
+ */
+
+add_action( 'init', 'create_my_post_types' );
+
+function create_my_post_types() {
+ register_post_type( 'Artist', 
+ array(
+      'labels' => array(
+      	'name' => __( 'Artists' ),
+      	'singular_name' => __( 'Artist' ),
+      	'add_new' => __( 'Add New' ),
+      	'add_new_item' => __( 'Add New Artist' ),
+      	'edit' => __( 'Edit' ),
+      	'edit_item' => __( 'Edit Artist' ),
+      	'new_item' => __( 'New Artist' ),
+      	'view' => __( 'View Artist' ),
+      	'view_item' => __( 'View Artist' ),
+      	'search_items' => __( 'Search Artists' ),
+      	'not_found' => __( 'No Artists found' ),
+      	'not_found_in_trash' => __( 'No Artists found in Trash' ),
+      	'parent' => __( 'Parent Artist' ),
+      ),
+ 'public' => true,
+      'menu_position' => 4,
+      'rewrite' => array('slug' => 'Artists'),
+      'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+      'taxonomies' => array('category', 'post_tag'),
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'query_var' => true,
+      'capability_type' => 'post',
+      'hierarchical' => false,
+     )
+  );
+}
+
+
+
+// functions run on activation –> important flush to clear rewrites
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == ‘themes.php’ ) {
+$wp_rewrite->flush_rules();
+}
+
+
+
 /**
  * Enqueue scripts and styles
  */
