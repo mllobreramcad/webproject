@@ -9,16 +9,16 @@
  
  
 jQuery(document).ready(function($) {
-
-    $('#menu-main-menu').hover(
+    $('#menu-main-menu > li').hover(
         function () {
             //show its submenu
-            $('ul', this).stop().slideDown(100);
+            $(this).children('ul').stop().slideDown(100);
+			
  
         }, 
         function () {
             //hide its submenu
-            $('ul', this).stop().slideUp(100);          
+            $(this).children('ul').stop().slideUp(100);
         }
     );
      
